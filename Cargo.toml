@@ -9,12 +9,12 @@ approx = "0.4"
 serde = "1.0"
 
 [dependencies.bevy]
-version = "0.5"
+git = "https://github.com/bevyengine/bevy.git"
 features = ["render"]
 default-features = false
 
-[dev-dependencies.bevy]
-version = "0.5"
+[dependencies.bevy]
+git = "https://github.com/bevyengine/bevy.git"
 features = ["bevy_winit", "bevy_wgpu", "bevy_gltf"]
 default-features = false
 
