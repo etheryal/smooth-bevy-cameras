@@ -16,7 +16,7 @@ use serde::{Deserialize, Serialize};
 pub struct UnrealCameraPlugin;
 
 impl Plugin for UnrealCameraPlugin {
-    fn build(&self, app: &mut AppBuilder) {
+    fn build(&self, app: &mut App) {
         app.add_system(default_input_map.system())
             .add_system(control_system.system())
             .add_event::<ControlEvent>();
@@ -54,7 +54,7 @@ impl UnrealCameraBundle {
 }
 
 /// A camera controlled with the mouse in the same way as Unreal Engine's viewport controller.
-#[derive(Clone, Copy, Debug, Deserialize, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, Component)]
 pub struct UnrealCameraController {
     pub enabled: bool,
     pub mouse_rotate_sensitivity: Vec2,

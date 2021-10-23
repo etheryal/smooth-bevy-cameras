@@ -16,7 +16,7 @@ use serde::{Deserialize, Serialize};
 pub struct OrbitCameraPlugin;
 
 impl Plugin for OrbitCameraPlugin {
-    fn build(&self, app: &mut AppBuilder) {
+    fn build(&self, app: &mut App) {
         app.add_system(default_input_map.system())
             .add_system(control_system.system())
             .add_event::<ControlEvent>();
@@ -54,7 +54,7 @@ impl OrbitCameraBundle {
 }
 
 /// A 3rd person camera that orbits around the target.
-#[derive(Clone, Copy, Debug, Deserialize, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, Component)]
 pub struct OrbitCameraController {
     pub enabled: bool,
     pub mouse_rotate_sensitivity: Vec2,
