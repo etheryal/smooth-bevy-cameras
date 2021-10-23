@@ -13,7 +13,7 @@ git = "https://github.com/bevyengine/bevy.git"
 features = ["render"]
 default-features = false
 
-[dependencies.bevy]
+[dev-dependencies.bevy]
 git = "https://github.com/bevyengine/bevy.git"
 features = ["bevy_winit", "bevy_wgpu", "bevy_gltf"]
 default-features = false
